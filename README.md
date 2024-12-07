@@ -2,11 +2,51 @@
 
 ![Port](images/Port.png)
 
-
+Empresas de reboque potuário realizam estudos e pesquisas visando entender como estruturar seus rebocadores em um novo porto ou em um porto que já atua
 
 ## Conceitos
+Inicialmente, vamos entender como é  a operação de rebocadores portuários utilizando o vídeo abaixo.
+
+[![Tugboat operation]([https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=9vzHKRu-wAk))
+
+### Requisitos de força e rebocadores para atender um navio
+
+Para atender a manobra de um navio no porto, existem regulamentações que calculam o número mínimo de rebocadores necessários para atuar em uma operação, assim como o somatório de bollardpull necesário.
+
+Hessen (2013) apresenta graficamente o número médio de rebocadores e BollardPull necessário para atender os navios, baseado nos valores de DeadWeight e comprimento total do navio.
+
+![BollardPull_vs_Length](images/BP_length.png)
+
+![BollardPull_vs_DeadWeight](images/BP_dw.png)
+
+Porém, no Brasil, as autoridades maritimas definem as regulamentações de rebocadores de acordo com as localidades, conforme imagem abaixo retirada da NPCP-SC, que indica os requerimento para o porto de Itajaí.
+
+![NPCPSC](images/NPCPSC.png)
+
 
 ## Problema
+
+### Enunciado
+
+A empresa AlphaTugs deseja estruturar as operações de rebocadores no porto de Landville. Com sua frota, a empresa tem disponibilidade de alocar até 5 rebocadores de alta potência (80t BP) e 5 rebocadores de baixa potência (50t BP).
+
+A equipe responsável por realizar o estudo de mercado, constatou que nas empresas concorrentes locais, possuem 5 rebocadores de baixa potência (50t BP), e 5 rebocadores de alta potência (70t BP). Também, notaram que é comum ocorrer manobras simultaneas dos navios clientes. Em um caso dia mais crítico, ocorre 1 conjuto de manobras de 3 navios ao mesmo tempo, e outro conjunto de manobras com 2 navios ao mesmo tempo.
+
+A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o objetivo de reduzir o custo total de operação diário.
+
+Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores e caracteristicas das frotas.
+
+|**AlphaTugs**|![Xbp](images/Tugboat_old4.png)|![Xbg](images/Tugboat_dalle3.png)|
+||Baixa pot. [Xbp]|Alta Pot. [Xbg|
+|BollardPull [t]|50|70|
+
+|**Concorrentes**|![Tugp](images/Tugboat_dalle.png)|![Tugg](images/Tugboat_dalle2.png)|
+||Baixa pot. [Xap]|Alta Pot. [Xag|
+|Consumo de combustível/hora [$]|1200|1680|
+|Custo operacional/dia|1800|1600|
+|BollardPull [t]|50|80|
+
+
 
 ## Modelagem
 
