@@ -38,15 +38,17 @@ Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores 
 
 |**AlphaTugs**|||
 |-------------|-------------|-------------|
-||Baixa pot. [Xbp]|Alta Pot. [Xbg|
-|BollardPull [t]|50|70|
-
-|**Concorrentes**|||
-|-------------|-------------|-------------|
 ||Baixa pot. [Xap]|Alta Pot. [Xag|
 |Consumo de combustível/hora [$]|1200|1680|
 |Custo operacional/dia|1800|1600|
 |BollardPull [t]|50|80|
+
+
+|**Concorrentes**|||
+|-------------|-------------|-------------|
+||Baixa pot. [Xbp]|Alta Pot. [Xbg|
+|BollardPull [t]|50|70|
+
 
 
 
