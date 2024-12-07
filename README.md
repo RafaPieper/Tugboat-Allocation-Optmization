@@ -13,15 +13,18 @@ Inicialmente, vamos entender como é  a operação de rebocadores portuários ut
 
 Para atender a manobra de um navio no porto, existem regulamentações que calculam o número mínimo de rebocadores necessários para atuar em uma operação, assim como o somatório de bollardpull necesário.
 
-Hessen (2013) apresenta graficamente o número médio de rebocadores e BollardPull necessário para atender os navios, baseado nos valores de DeadWeight e comprimento total do navio.
+Hessen(2018) apresenta graficamente o número médio de rebocadores e BollardPull necessário para atender os navios, baseado nos valores de DeadWeight e comprimento total do navio.
 
 ![BollardPull_vs_Length](images/BP_length.png)
+Fonte: Hessen(2018)
 
 ![BollardPull_vs_DeadWeight](images/BP_dw.png)
+Fonte: Hessen(2018)
 
 Porém, no Brasil, as autoridades maritimas definem as regulamentações de rebocadores de acordo com as localidades, conforme imagem abaixo retirada da NPCP-SC, que indica os requerimento para o porto de Itajaí.
 
 ![NPCPSC](images/NPCPSC.png)
+Fonte: Brasil(2022)
 
 
 ## Problema
@@ -173,6 +176,74 @@ Identificou-se que o problema é um caso de **Programação linear - Programaç�
 
 
 ## Análises
+
+Para resolver este problema, podemos criar cenários variando a quantidade de rebocadores de acordo com sua potência, de forma a avaliar todas as combinações.
+
+Considerando a possibilidade de varia de 0 a 5 cada tipo de rebocador da empresa, temos um total de 36 possibilidades "ótimas" a avaliar.
+
+|$$X_{ap}$$|$$X_{ag}$$|Total Rebocadoree|
+|-----|-----|-----|
+|0|0|0|
+|0|1|1|
+|0|2|2|
+|...|...|...|
+|5|5|10|
+
+Ao realizar o processo de otimização para as combinações, temos o seguinte resultado
+
+|Xap|Xag|# Rebocadores|Resultados ótimos para os cenários|
+|-----|-----|-----|-----|
+|0|0|0|51350|
+|1|0|1|47050|
+|2|0|2|47050|
+|3|0|3|47500|
+|4|0|4|47500|
+|5|0|5|47950|
+|0|1|1|49010|
+|1|1|2|44710|
+|2|1|3|40660|
+|3|1|4|40660|
+|4|1|5|40660|
+|5|1|6|41110|
+|0|2|2|46670|
+|1|2|3|42380|
+|2|2|4|41630|
+|3|2|5|41630|
+|4|2|6|41630|
+|5|2|7|42300|
+|0|3|3|44340|
+|1|3|4|43350|
+|2|3|5|42600|
+|3|3|6|42600|
+|4|3|7|42820|
+|5|3|8|43490|
+|0|4|4|45310|
+|1|4|5|44320|
+|2|4|6|43570|
+|3|4|7|43790|
+|4|4|8|44010|
+|5|4|9|44680|
+|0|5|5|46280|
+|1|5|6|45290|
+|2|5|7|44760|
+|3|5|8|44980|
+|4|5|9|45200|
+|5|5|10|46280|
+
+Podemos verificar a fronteira de Pareto, para determinar o menor número de rebocarodes e o menor custo possível de operação.
+
+![Pareto](images/Chart1.png)
+
+Com isso, chega-se ao melhor resultado avaliado de **2 rebocadores de baixa potência e 1 rebocador de alta potência** para alocar neste porto para ter o menor custo de operação, com o resultado de **$40.660,00**
+
+## Referências
+
+3D-LIVING-STUDIO. How a Tugboat Tows Ships 1000 Times Bigger - Z-Drive Tugboat.2024. Disponível em: <https://www.youtube.com/watch?v=9vzHKRu-wAk>.
+
+BRASIL, M. do. NPCP-CPSC. 2022. Disponível em: <https://www.marinha.mil.br/cpsc/npcp>.
+
+HENSEN, H. Tug Use in Port: A Practical Guide Including Ports, Port Approaches and Offshore Terminals. [S.l.]: ABR Company, 2018. Google-Books-ID: xZN0tgEACAAJ.ISBN 978-1-904050-34-6.
+![image](https://github.com/user-attachments/assets/a68ff033-4f72-40d9-ac8c-21c1ad9c43f3)
 
 
 
