@@ -1,6 +1,6 @@
 # Alocação de Rebocadores em portos
 
-![port](images\Port.webp)
+
 
 
 
