@@ -30,13 +30,15 @@ Porém, no Brasil, as autoridades maritimas definem as regulamentações de rebo
 
 A empresa AlphaTugs deseja estruturar as operações de rebocadores no porto de Landville. Com sua frota, a empresa tem disponibilidade de alocar até 5 rebocadores de alta potência (80t BP) e 5 rebocadores de baixa potência (50t BP).
 
-A equipe responsável por realizar o estudo de mercado, constatou que nas empresas concorrentes locais, possuem 5 rebocadores de baixa potência (50t BP), e 5 rebocadores de alta potência (70t BP). Também, notaram que é comum ocorrer manobras simultaneas dos navios clientes. Em um caso dia mais crítico, ocorre 1 conjuto de manobras de 3 navios ao mesmo tempo, e outro conjunto de manobras com 2 navios ao mesmo tempo.
+A equipe responsável por realizar o estudo de mercado, constatou que nas empresas concorrentes locais, possuem 5 rebocadores de baixa potência (50t BP), e 5 rebocadores de alta potência (70t BP). Também, notaram que é comum ocorrer manobras simultaneas dos navios clientes. Em um caso dia mais crítico, ocorre 1 conjuto de manobras de 3 navios ao mesmo tempo, e em outro momento um conjunto de manobras com 2 navios ao mesmo tempo.
+
+Entre as empresas de rebocadores, quando não há rebocadores suficientes para o atendimento de um cliente, ocorre o afretamento, que é quando um empresa de reboque portuário contrata o concorrente para realizar sua manobra. O afretamento possui um custo especifico para cada tipo de navio, e cada empresa posui sua tabela de cálculo.
 
 A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o objetivo de reduzir o custo total de operação diário.
 
-Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores e caracteristicas das frotas.
+Abaixo, estão os requisitos dos navios para atendimento, custos dos rebocadores e caracteristicas das frotas.
 
-|**AlphaTugs**|<img src="iamges/Tugboat_dalle.png" alt="Xap" width="50"/>|<img src="iamges/Tugboat_dalle2.png" alt="Xap" width="50"/>|
+|**AlphaTugs**|<img src="images/Tugboat_dalle.png" alt="Xap" width="50"/>|<img src="images/Tugboat_dalle2.png" alt="Xap" width="50"/>|
 |-------------|-------------|-------------|
 ||Baixa pot. [Xap]|Alta Pot. [Xag|
 |Consumo de combustível/hora [$]|1200|1680|
@@ -44,15 +46,46 @@ Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores 
 |BollardPull [t]|50|80|
 
 
-|**Concorrentes**|||
+|**Concorrentes**|<img src="images/Tugboat_old4.png" alt="Xap" width="50"/>|<img src="images/Tugboat_dalle3.png" alt="Xap" width="50"/>|
 |-------------|-------------|-------------|
-||Baixa pot. [Xbp]|Alta Pot. [Xbg|
+||Baixa pot. [Xbp]|Alta Pot. [Xbg]|
 |BollardPull [t]|50|70|
 
+Situação de manobras 1:
+
+|-|<img src="images/ship3.png" alt="Xap" width="100"/>|<img src="images/Ship1.png" alt="Xap" width="100"/>|<img src="images/ship2.png" alt="Xap" width="100"/>|
+|-------------|-------------|-------------|-------------|
+|Navio i|1|2|3|
+|Tempo de manobra [h]|0.5|2|1.5|
+|Num. Rebocadores [#]|3|2|4|
+|BP minimo [t]|150|120|200|
+|Rebocador de alta potência [#]|--|--|--|
+|Custo de afretamento/rebocador/hora [$]|2500|2000|2100|
+
+Situação de manobras 2:
+
+|-|<img src="images/ship3.png" alt="Xap" width="100"/>|<img src="images/ship2.png" alt="Xap" width="100"/>|
+|-------------|-------------|-------------|
+|Navio i|4|5|
+|Tempo de manobra [h]|1.5|2.5|
+|Num. Rebocadores [#]|2|3|
+|BP minimo [t]|100|180|
+|Rebocador de alta potência [#]|--|1|
+|Custo de afretamento/rebocador/hora [$]|1500|3000|
 
 
 
 ## Modelagem
+
+### Nomenclatura
+
+- $c \in \{a,b\}$ → a = AlphaTugs; b = Concorrente
+- $s \in \{p,g\}$ → p = baixa potência; g = alta potência
+- $i \in \{1,2,3,4,5\}$ → Identificação do navio
+
+### Restrições
+
+**Número de rebocadores para atender o navio i**
 
 $$
 N_i(x) = \sum_{c=a}^{b} \sum_{s=p}^{g} X_{csi} \quad \rightarrow \quad
@@ -65,6 +98,8 @@ X_{ap5} + X_{ag5} + X_{bp5} + X_{bg5} = 3.
 \end{cases}
 $$
 
+**Bollard Pull mínimo para atender o navio i**
+
 $$
 BP_i(x) \leq \sum_{c=a}^{b} \sum_{s=p}^{g} BP_{cs} \cdot X_{csi} \quad \rightarrow \quad
 \begin{cases}
@@ -76,6 +111,8 @@ BP_i(x) \leq \sum_{c=a}^{b} \sum_{s=p}^{g} BP_{cs} \cdot X_{csi} \quad \rightarr
 \end{cases}
 $$
 
+**Garantia de rebocadores na frota AlphaTugs (a)**
+
 $$
 A_n(x) \rightarrow 
 \begin{cases}
@@ -86,6 +123,7 @@ X_{ag} - (X_{ag4} + X_{ag5}) \geq 0.
 \end{cases}
 $$
 
+**Garantia de rebocadores na frota concorrente (b)**
 
 $$
 B_n(x) \rightarrow 
@@ -96,6 +134,9 @@ B_n(x) \rightarrow
 5 - (X_{bg4} + X_{bg5}) \geq 0.
 \end{cases}
 $$
+
+
+**Objetivo: Minimizar o custo total diário de operação**
 
 $$
 F(x) = Min 
@@ -109,6 +150,8 @@ F(x) = Min
 \end{cases}
 $$
 
+### Resumo
+
 | Atributos de entrada | Atributos de saída |
 |---------------------|-------------------|
 | Variáveis $X_{csi}$ | Restrições BP<br>$BP_i(x) \leq \sum_{c=a}^{b} \sum_{s=p}^{g} BP_{cs} * X_{csi}$ |
@@ -119,6 +162,15 @@ $$
 
 
 ## Ferramentas
+
+Para realizar a otimização foram utilzadas as ferramentas MS Excel (solver) e o site (https://online-optimizer.appspot.com/?model=builtin:default.mod)
+
+Identificou-se que o problema é um caso de **Programação linear - Programação Inteira**
+
+<img src="images/Excel.png" alt="Excel" width="200"/>
+
+<img src="images/Onlineopt.png" alt="Online_optimizer" width="200"/>
+
 
 ## Análises
 
