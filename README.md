@@ -8,7 +8,7 @@ Empresas de reboque potuário realizam estudos e pesquisas visando entender como
 Inicialmente, vamos entender como é  a operação de rebocadores portuários utilizando o vídeo abaixo.
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">
-        <iframe src="[https://www.youtube.com/embed/VIDEO_ID](https://www.youtube.com/watch?v=9vzHKRu-wAk)" 
+        <iframe src="https://www.youtube.com/watch?v=9vzHKRu-wAk" 
                 style="position: absolute; width: 100%; height: 100%;" 
                 title="Video Title" 
                 frameborder="0" 
