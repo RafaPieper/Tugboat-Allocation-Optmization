@@ -7,7 +7,7 @@ Empresas de reboque potuário realizam estudos e pesquisas visando entender como
 ## Conceitos
 Inicialmente, vamos entender como é  a operação de rebocadores portuários utilizando o vídeo abaixo.
 
-[![Tugboat operation]([https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=9vzHKRu-wAk))
+[![Tugboat operation]([https://img.youtube.com/vi/9vzHKRu-wAk/0.jpg)](https://www.youtube.com/watch?v=9vzHKRu-wAk))
 
 ### Requisitos de força e rebocadores para atender um navio
 
