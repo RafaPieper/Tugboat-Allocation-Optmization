@@ -7,13 +7,7 @@ Empresas de reboque potuário realizam estudos e pesquisas visando entender como
 ## Conceitos
 Inicialmente, vamos entender como é  a operação de rebocadores portuários utilizando o vídeo abaixo.
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%">
-<iframe src="https://www.youtube.com/watch?v=9vzHKRu-wAk" 
-        title="How a Tugboat Tows Ships 1000 Times Bigger - Z-Drive Tugboat" frameborder="0" allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        style="position: absolute; width: 100%; height: 100%;">
-</iframe>
-</div>
+[![title here](https://img.youtube.com/vi/9vzHKRu-wAk/0.jpg)](https://www.youtube.com/watch?v=9vzHKRu-wAk)
 
 ### Requisitos de força e rebocadores para atender um navio
 
