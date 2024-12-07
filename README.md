@@ -36,7 +36,7 @@ A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o obj
 
 Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores e caracteristicas das frotas.
 
-|**AlphaTugs**|||
+|**AlphaTugs**|<img src="iamges/Tugboat_dalle.png" alt="Xap" width="50"/>|<img src="iamges/Tugboat_dalle2.png" alt="Xap" width="50"/>|
 |-------------|-------------|-------------|
 ||Baixa pot. [Xap]|Alta Pot. [Xag|
 |Consumo de combustível/hora [$]|1200|1680|
