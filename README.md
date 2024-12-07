@@ -191,7 +191,7 @@ Para resolver este problema, podemos criar cenários variando a quantidade de re
 
 Considerando a possibilidade de varia de 0 a 5 cada tipo de rebocador da empresa, temos um total de 36 possibilidades "ótimas" a avaliar.
 
-|$$X_{ap}$$|$$X_{ag}$$|Total Rebocadoree|
+|$$X_{ap}$$|$$X_{ag}$$|Total Rebocadores|
 |-----|-----|-----|
 |0|0|0|
 |0|1|1|
@@ -201,7 +201,7 @@ Considerando a possibilidade de varia de 0 a 5 cada tipo de rebocador da empresa
 
 Ao realizar o processo de otimização para as combinações, temos o seguinte resultado
 
-|Xap|Xag|# Rebocadores|Resultados ótimos para os cenários|
+|$$X_{ap}$$|$$X_{ag}$$|Total Rebocadores|Resultados ótimos para os cenários|
 |-----|-----|-----|-----|
 |0|0|0|51350|
 |1|0|1|47050|
@@ -211,9 +211,9 @@ Ao realizar o processo de otimização para as combinações, temos o seguinte r
 |5|0|5|47950|
 |0|1|1|49010|
 |1|1|2|44710|
-|2|1|3|40660|
-|3|1|4|40660|
-|4|1|5|40660|
+|2|1|3|**40660**|
+|3|1|4|**40660**|
+|4|1|5|**40660**|
 |5|1|6|41110|
 |0|2|2|46670|
 |1|2|3|42380|
