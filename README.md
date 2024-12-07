@@ -35,7 +35,7 @@ A empresa AlphaTugs deseja estruturar as operações de rebocadores no porto de 
 
 A equipe responsável por realizar o estudo de mercado, constatou que nas empresas concorrentes locais, possuem 5 rebocadores de baixa potência (50t BP), e 5 rebocadores de alta potência (70t BP). Também, notaram que é comum ocorrer manobras simultaneas dos navios clientes. Em um caso dia mais crítico, ocorre 1 conjuto de manobras de 3 navios ao mesmo tempo, e em outro momento um conjunto de manobras com 2 navios ao mesmo tempo.
 
-Entre as empresas de rebocadores, quando não há rebocadores suficientes para o atendimento de um cliente, ocorre o afretamento, que é quando um empresa de reboque portuário contrata o concorrente para realizar sua manobra. O afretamento possui um custo especifico para cada tipo de navio, e cada empresa posui sua tabela de cálculo.
+Entre as empresas de rebocadores, quando não há rebocadores suficientes para o atendimento de um cliente, ocorre o afretamento. Afretamento é quando um empresa de reboque portuário contrata o concorrente para realizar sua manobra. Esta situação possui um custo especifico para cada tipo de navio, e cada empresa posui sua tabela de cálculo.
 
 A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o objetivo de reduzir o custo total de operação diário.
 
@@ -85,6 +85,16 @@ Situação de manobras 2:
 - $c \in \{a,b\}$ → a = AlphaTugs; b = Concorrente
 - $s \in \{p,g\}$ → p = baixa potência; g = alta potência
 - $i \in \{1,2,3,4,5\}$ → Identificação do navio
+
+### Variáveis
+|<img src="images/ship3.png" alt="Xap" width="100"/>|<img src="images/Ship1.png" alt="Xap" width="100"/>|<img src="images/ship2.png" alt="Xap" width="100"/>|<img src="images/ship3.png" alt="Xap" width="100"/>|<img src="images/ship2.png" alt="Xap" width="100"/>|
+|------|------|------|------|------|
+|i=1|i=2|i=3|i=4|i=5|
+|$$X_{ap1}$$|$$X_{ap2}$$|$$X_{ap3}$$|$$X_{ap4}$$|$$X_{ap5}$$|
+|$$X_{ag1}$$|$$X_{ag2}$$|$$X_{ag3}$$|$$X_{ag4}$$|$$X_{ag5}$$|
+|$$X_{bp1}$$|$$X_{bp2}$$|$$X_{bp3}$$|$$X_{bg4}$$|$$X_{bp5}$$|
+|$$X_{bg1}$$|$$X_{bg2}$$|$$X_{bg3}$$|$$X_{bg4}$$|$$X_{bg5}$$|
+
 
 ### Restrições
 
