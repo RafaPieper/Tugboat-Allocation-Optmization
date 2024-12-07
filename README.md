@@ -36,11 +36,11 @@ A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o obj
 
 Abaixo, estão os requisitos dos navios para atendiment, custos dos rebocadores e caracteristicas das frotas.
 
-|**AlphaTugs**|![Xbp](images/Tugboat_old4.png)|![Xbg](images/Tugboat_dalle3.png)|
+|**AlphaTugs**|||
 ||Baixa pot. [Xbp]|Alta Pot. [Xbg|
 |BollardPull [t]|50|70|
 
-|**Concorrentes**|![Tugp](images/Tugboat_dalle.png)|![Tugg](images/Tugboat_dalle2.png)|
+|**Concorrentes**|||
 ||Baixa pot. [Xap]|Alta Pot. [Xag|
 |Consumo de combustível/hora [$]|1200|1680|
 |Custo operacional/dia|1800|1600|
