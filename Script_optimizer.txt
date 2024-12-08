@@ -1,0 +1,80 @@
+###=====VARIVAEIS========
+##===conjunto de manobras1 ===
+##Navio 1 --> 0,5h ; 3 reb; 150BP
+var Xap1 >= 0, integer;
+var Xag1 >= 0, integer;
+var Xbp1 >= 0, integer;
+var Xbg1 >= 0, integer;
+##Navio 2 --> 2h ; 2 reb; 120BP
+var Xap2 >= 0, integer;
+var Xag2 >= 0, integer;
+var Xbp2 >= 0, integer;
+var Xbg2 >= 0, integer;
+##Navio 3 --> 1.5h ; 4 reb; 200BP
+var Xap3 >= 0, integer;
+var Xag3 >= 0, integer;
+var Xbp3 >= 0, integer;
+var Xbg3 >= 0, integer;
+#===conjunto de manobras2 ===
+##Navio 4 --> 1.5h ; 3 reb; 100BP
+var Xap4 >= 0, integer;
+var Xag4 >= 0, integer;
+var Xbp4 >= 0, integer;
+var Xbg4 >= 0, integer;
+###Navio 5 --> 2.5h ;  4 reb; 180BP, minimo 1 alta potencia
+var Xap5 >= 0, integer;
+var Xag5 >= 0, integer;
+var Xbp5 >= 0, integer;
+var Xbg5 >= 0, integer;
+
+
+
+####=====PARAMETROS========
+var bp = 5; #n rebocadores concorrencia de baixa potencia 50BP
+var bg = 5; #n rebocadores concorrencia de alta potencia 70BP
+
+var ap =2 ;  #n rebocadores de baixa potencia 50BP    ###PARAMETRO  // VARIAVEL
+var ag =0;  #n rebocadores de alta potencia 80BP     ###PARAMETRO  // VARIAVEL
+
+
+####=====RESTRIÇÕES========
+subject to N1:   Xap1 + Xag1 + Xbp1 + Xbg1 = 3; #Restrição n reb Navio 1
+subject to N2:   Xap2 + Xag2 + Xbp2 + Xbg2 = 2; #Restrição n reb Navio 2
+subject to N3:   Xap3 + Xag3 + Xbp3 + Xbg3 = 4; #Restrição n reb Navio 3
+subject to N4:   Xap4 + Xag4 + Xbp4 + Xbg4 = 2 ; #Restrição n reb Navio 4
+subject to N5:   Xap5 + Xag5 + Xbp5 + Xbg5 = 3 ; #Restrição n reb Navio 5
+subject to N5_pot:   Xag5 + Xbg5 >= 1 ; #Restrição 1 reb alta potência Navio 5
+
+
+subject to BP1:   50*Xap1 + 80*Xag1 + 50*Xbp1 + 70*Xbg1 >=150; #Restrição BolalrdPull Navio 1
+subject to BP2:   50*Xap2 + 80*Xag2 + 50*Xbp2 + 70*Xbg2 >=120; #Restrição BolalrdPull Navio 2
+subject to BP3:   50*Xap3 + 80*Xag3 + 50*Xbp3 + 70*Xbg3 >=200; #Restrição BolalrdPull Navio 3
+subject to BP4:   50*Xap4 + 80*Xag4 + 50*Xbp4 + 70*Xbg4 >=100; #Restrição BolalrdPull Navio 4
+subject to BP5:   50*Xap5 + 80*Xag5 + 50*Xbp5 + 70*Xbg5 >=180; #Restrição BolalrdPull Navio 5
+
+
+subject to A1:   ap - Xap1 - Xap2 - Xap3 >= 0; # Limite de Reb Próprio baixa pot
+subject to A2:   ag - Xag1 - Xag2 - Xag3 >= 0; # Limite de Reb Próprio alta pot
+subject to A3:   ap - Xap4 - Xap5 >= 0; # Limite de Reb Próprio baixa pot
+subject to A4:   ag - Xag4 - Xag5 >= 0; # Limite de Reb Próprio alta pot
+
+
+subject to B1:  bp - Xbp1 - Xbp2 - Xbp3 >= 0; # Limite de Reb Concorrente baixa pot
+subject to B2:  bg - Xbg1 - Xbg2 - Xbg3 >= 0; # Limite de Reb Concorrente alta pot
+subject to B3:  bp - Xbp4 - Xbp5 >= 0; # Limite de Reb Concorrente baixa pot
+subject to B4:  bg - Xbg4 - Xbg5 >= 0; # Limite de Reb Concorrente alta pot
+
+
+####=====OBJETIVO========
+minimize custo: (
+            0.5*(1200*Xap1 + 1680*Xag1 + 2500*(Xbp1 + Xbg1)) +   #Custo manobra Navio 1
+            2.0*(1200*Xap2 + 1680*Xag2 + 2000*(Xbp2 + Xbg2)) +   #Custo manobra Navio 2
+            1.5*(1200*Xap3 + 1680*Xag3 + 2100*(Xbp3 + Xbg3)) +   #Custo manobra Navio 3
+            1.5*(1200*Xap4 + 1680*Xag4 + 1500*(Xbp4 + Xbg4)) +   #Custo manobra Navio 4
+            2.5*(1200*Xap5 + 1680*Xag5 + 3000*(Xbp5 + Xbg5)) +   #Custo manobra Navio 5
+            
+            1800*ap + 1600*ag #Custo diario operacional
+            );
+
+            
+            
