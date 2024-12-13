@@ -4,9 +4,14 @@ Video de apresentação: https://youtu.be/QNtVm1VKPhM
 
 [![title here](https://img.youtube.com/vi/QNtVm1VKPhM/0.jpg)](https://www.youtube.com/watch?v=QNtVm1VKPhM)
 
-![Port](images/Port.png)
 
-Empresas de reboque potuário realizam estudos e pesquisas visando entender como estruturar seus rebocadores em um novo porto ou em um porto que já atua
+As empresas de reboque portuário realizam estudos e pesquisas com o objetivo de entender como realizar a alocação de seus rebocadores, seja em um novo porto ou em um porto no qual já operam.
+
+Garantir uma alocação eficiente das embarcações é crucial para assegurar uma operação fluida e com o menor custo operacional possível.
+
+No entanto, devido à grande quantidade de variáveis e restrições envolvidas, muitas vezes é difícil para uma pessoa alcançar o resultado ótimo dessas decisões.
+
+É nesse contexto que as soluções baseadas em técnicas de otimização se tornam essenciais.
 
 ## Conceitos
 Inicialmente, vamos entender como é  a operação de rebocadores portuários utilizando o vídeo abaixo.
