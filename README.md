@@ -48,6 +48,8 @@ Entre as empresas de rebocadores, quando não há rebocadores suficientes para o
 
 A AlphaTugs, deseja alocar seus rebocadores da melhor forma possível, com o objetivo de reduzir o custo total de operação diário.
 
+Como deve ser alocado os rebocadores nas manobras, e quantos rebocadores a empresa deve manter no porto para ter o menor custo operacional?
+
 Abaixo, estão os requisitos dos navios para atendimento, custos dos rebocadores e caracteristicas das frotas.
 
 |**AlphaTugs**|<img src="images/Tugboat_dalle.png" alt="Xap" width="50"/>|<img src="images/Tugboat_dalle2.png" alt="Xap" width="50"/>|
@@ -84,6 +86,8 @@ Situação de manobras 2:
 |BP minimo [t]|100|180|
 |Rebocador de alta potência [#]|--|1|
 |Custo de afretamento/rebocador/hora [$]|1500|3000|
+
+
 
 
 
